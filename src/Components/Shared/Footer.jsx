@@ -1,9 +1,11 @@
 import { Link } from 'react-router'
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
+import { useContext } from 'react'
+import { UserContext } from '../../Context/AuthContext'
 
 export default function Footer() {
-    const { user } = "null"
+    const { user } = useContext(UserContext)
     return (
         <footer className="text-sm bg-gray-300 w-full pt-8">
             <section className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start w-11/12 mx-auto'>

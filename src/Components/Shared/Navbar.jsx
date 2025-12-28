@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router";
+import Sidebar from "./sidebar";
 
 export default function Navbar() {
     return (
@@ -14,10 +15,7 @@ export default function Navbar() {
                     <NavLink className="trns hover:text-gray-600" to='/about'>About</NavLink>
                     <NavLink className="trns hover:text-gray-600" to='/contact'>Contact Us</NavLink>
                 </div>
-                <div className="space-x-2">
-                    <NavLink to="/Register">Register</NavLink>
-                    <NavLink to="/login">Login</NavLink>
-                </div>
+                <Sidebar />
             </nav>
         </header>
     )

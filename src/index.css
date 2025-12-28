@@ -1,1 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import "tailwindcss";
+
+:root {
+  /* Primary Colors */
+  --primary-500: red;
+  --primary-600: darkred;
+  --primary-700: crimson;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+  background-color: whitesmoke;
+}
+.embla {
+  overflow: hidden;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+}
+
+nav>a.active{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+aside>a.active{
+  background-color: #dfdfdf;
+}
+.sideLink{
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+.sideLink:hover{
+  background-color: #efefef;
+}
+.btn{
+  padding: 8px 18px;
+  cursor: pointer;
+}
+.btn-primary{
+  background-color: var(--primary-600);
+  color: white;
+  font-size: small;
+  font-weight: 700;
+}
+.btn-primary:hover{
+  background-color: var(--primary-700);
+  transform: scale(1.05);
+}
+.btn-primary:disabled{
+  background-color: darkgray;
+  transform: scale(1.05);
+}
+.btn-out{
+  border: 1px solid var(--primary-700);
+  font-size: small;
+  font-weight: 700;
+}
+.btn-out:hover{
+  transform: scale(1.05);
+}
+.trns{
+  @apply transition-discrete duration-300 transition-all
+}
