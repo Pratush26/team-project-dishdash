@@ -25,7 +25,7 @@ export default function UserProvider({ children }) {
               },
             }
           );
-          setUserInfo(res.data);
+          setUserInfo(res.data ?? {});
         } catch (error) {
           console.error("User Info Error:", error);
           setUserInfo(null);

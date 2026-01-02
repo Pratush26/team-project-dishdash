@@ -35,6 +35,8 @@ export default function Sidebar() {
                                         </>
                                         :
                                         <>
+                                            <NavLink className="trns sideLink" to="/open-restaurant">Open Restaurant</NavLink>
+                                            <NavLink className="trns sideLink" to="/manage-restaurant">Manage Restaurant</NavLink>
                                         </>
                                 }
                             </>
