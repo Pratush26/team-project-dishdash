@@ -1,4 +1,4 @@
-import heroImg from '../../assets/hero.jpg'
+import heroImg from '../../assets/hero.png'
 const Hero = () => {
   return (
     <section className="bg-linear-to-r from-orange-50 to-orange-100">
