@@ -33,14 +33,14 @@ export const router = createBrowserRouter([
                 path: "manage-restaurant",
                 element: <ManageRestaurant />
             },
-          {
-        path: "about",
-        Component: About,
-      },
-      {
-        path: "contact",
-        Component: Contact,
-      },
+            {
+                path: "about",
+                Component: About,
+            },
+            {
+                path: "contact",
+                Component: Contact,
+            }
         ]
     }
 ])

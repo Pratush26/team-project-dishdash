@@ -3,7 +3,7 @@ import Sidebar from "./sidebar";
 
 export default function Navbar() {
     return (
-        <header className="w-full relative">
+        <header className="w-full sticky top-0 z-50 bg-white">
             <nav className="flex items-center justify-between w-11/12 mx-auto my-4 text-sm font-medium">
                 <Link to='/' className="flex gap-2 items-end">
                     <img src={'/favicon.ico'} alt="logo" className="h-9 w-auto" />
@@ -11,7 +11,7 @@ export default function Navbar() {
                 </Link>
                 <div className="space-x-2 hidden md:block">
                     <NavLink className="trns hover:text-gray-600" to='/'>Home</NavLink>
-                    <NavLink className="trns hover:text-gray-600" to='/all-issues'>All Issues</NavLink>
+                    <NavLink className="trns hover:text-gray-600" to='/foods'>Foods</NavLink>
                     <NavLink className="trns hover:text-gray-600" to='/about'>About</NavLink>
                     <NavLink className="trns hover:text-gray-600" to='/contact'>Contact Us</NavLink>
                 </div>

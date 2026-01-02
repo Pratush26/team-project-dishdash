@@ -16,7 +16,7 @@ export default function Sidebar() {
                         <RxHamburgerMenu />
                 }
             </button>
-            <aside className={`fixed ${isOpened ? "translate-x-0" : "translate-x-full"} top-16 right-1 bg-(--base-200) flex flex-col justify-center gap-2 trns`}>
+            <aside className={`fixed ${isOpened ? "translate-x-0" : "translate-x-full"} top-16 right-1 z-10 flex flex-col justify-center gap-2 trns p-4 rounded-lg bg-white`}>
                 {
                     loading ?
                         <>
