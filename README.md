@@ -1,4 +1,26 @@
-# React + Vite
+# ![Logo](./public/favicon.ico) DishDash
+This is a team project, a food purchasing website - Dish Dash. People can open there restaurant profile and sell there foods by this platform. Customer can search and buy their desired food and provide their feedback.
+
+- [Preview Link](https://dishdashres.netlify.app/)
+
+- [Frontend repository](https://github.com/Pratush26/team-project-dishdashd)
+
+- [Backend repository](https://restaurant-backend-teal.vercel.app)
+
+Used Tech:
+- React
+- Axios
+- Firebase
+- React router
+- Recharts
+
+Features: 
+- Seller can promote his restaurent and sell his product
+- Customer can purchase food and provide their feedback
+- Role-based, Animated and responsive Ui
+- Product state-management and payment method
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
