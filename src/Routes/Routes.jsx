@@ -7,6 +7,8 @@ import About from "../Pages/About";
 import Contact from "../Pages/Contact";
 import OpenRestaurantForm from "../Pages/Forms/OpenRestaurent";
 import ManageRestaurant from "../Pages/tables/ManageRestaurant";
+import Food from "../Pages/Food";
+import Dashboard from "../Pages/Dashboard";
 
 export const router = createBrowserRouter([
     {
@@ -35,11 +37,19 @@ export const router = createBrowserRouter([
             },
             {
                 path: "about",
-                Component: About,
+                Component: About
             },
             {
                 path: "contact",
-                Component: Contact,
+                Component: Contact
+            },
+            {
+                path: "dashboard",
+                element: <Dashboard />
+            },
+            {
+                path: "foods",
+                Component: Food
             }
         ]
     }

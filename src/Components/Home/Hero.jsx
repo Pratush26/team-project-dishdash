@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import heroImg from '../../assets/hero.png'
 const Hero = () => {
   return (
@@ -17,13 +18,13 @@ const Hero = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex flex-wrap gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition">
+            <Link to='/foods' className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium trns">
               Explore Restaurants
-            </button>
+            </Link>
 
-            <button className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-medium transition">
+            <Link to='/register' className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-medium trns">
               Become a Partner
-            </button>
+            </Link>
           </div>
         </div>
 
