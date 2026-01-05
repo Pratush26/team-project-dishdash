@@ -10,11 +10,15 @@ import ManageRestaurant from "../Pages/tables/ManageRestaurant";
 import Food from "../Pages/Food";
 import Dashboard from "../Pages/Dashboard";
 import Restaurant from "../Pages/Restaurant";
+import LoadingPage from "../Layouts/Loading";
+import ErrorPage from "../Layouts/ErrorPage";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         Component: HomeLayout,
+        HydrateFallback: <LoadingPage />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,

@@ -1,0 +1,9 @@
+export default function Loader() {
+    return (
+        <section className="flex items-center justify-center w-fit gap-4">
+            <div className="animate-ping h-3 w-1 bg-(--primary-500)"></div>
+            <div className="animate-ping h-3 w-1 bg-(--primary-500)"></div>
+            <div className="animate-ping h-3 w-1 bg-(--primary-500)"></div>
+        </section>
+    )
+}

@@ -3,6 +3,7 @@ import { useAxios } from "../Hooks/UseAxios"
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../Context/AuthContext"
 import AddFoodModal from "../Components/Modals/AddFood"
+import Loader from "../Components/Shared/Loader"
 
 export default function Restaurant() {
     const { user } = useContext(UserContext)
@@ -10,11 +11,28 @@ export default function Restaurant() {
     const axis = useAxios()
     const [resData, setResData] = useState([])
     const [isModalOpened, setIsModalOpened] = useState(false)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
-        axis(`/restaurants/${id}`)
-            .then(res => setResData(res.data))
-            .catch(err => console.error(err))
+        const fetchData = async () => {
+            setLoading(true)
+            try {
+                const res = await axis(`/restaurants/${id}`)
+                setResData(res.data)
+            } catch (err) {
+                console.error(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData()
     }, [axis, id])
+    if (loading) {
+        return (
+            <div className="w-full flex items-center justify-center min-h-[50vh]">
+                <Loader />
+            </div>
+        )
+    }
     return (
         <main className="w-11/12 mx-auto my-10 relative">
             {isModalOpened && <AddFoodModal setIsModalOpened={setIsModalOpened} restaurantId={resData?._id} />}
