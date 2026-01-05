@@ -23,7 +23,7 @@ export default function RegisterPage() {
 
             const formData = new FormData();
             formData.append("image", data.image[0]);
-            const ImgRes = axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_BB_KEY}`, formData)
+            const ImgRes = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMG_BB_KEY}`, formData)
 
             if (!ImgRes?.data.data?.display_url) throw new Error("Image upload failed");
 

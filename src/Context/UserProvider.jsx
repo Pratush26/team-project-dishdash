@@ -17,14 +17,7 @@ export default function UserProvider({ children }) {
         setUser(u);
 
         try {
-          const res = await axios.get(
-            `${import.meta.env.VITE_SERVER}/userInfo`,
-            {
-              headers: {
-                authorization: `Bearer ${u.accessToken}`,
-              },
-            }
-          );
+          const res = await axios.get(`${import.meta.env.VITE_SERVER}/user/role?email=${u?.email}`);
           setUserInfo(res.data ?? {});
         } catch (error) {
           console.error("User Info Error:", error);

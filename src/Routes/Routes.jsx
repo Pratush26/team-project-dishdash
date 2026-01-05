@@ -9,6 +9,7 @@ import OpenRestaurantForm from "../Pages/Forms/OpenRestaurent";
 import ManageRestaurant from "../Pages/tables/ManageRestaurant";
 import Food from "../Pages/Food";
 import Dashboard from "../Pages/Dashboard";
+import Restaurant from "../Pages/Restaurant";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: "manage-restaurant",
                 element: <ManageRestaurant />
+            },
+            {
+                path: "/restaurant/:id",
+                element: <Restaurant />
             },
             {
                 path: "about",

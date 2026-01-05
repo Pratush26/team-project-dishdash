@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 // import { useAxios } from '../../Hooks/UseAxios'
 import '../../Utils/table.css'
 import axios from 'axios'
+import { Link } from 'react-router'
 
 export default function ManageRestaurant() {
     // const axis = useAxios()
@@ -11,7 +12,6 @@ export default function ManageRestaurant() {
             .then(res => setResData(res.data))
             .catch(err => console.error(err))
     }, [])
-    console.log("resData", resData)
 
     return (
         <main className='w-11/12 mx-auto my-8'>
@@ -20,7 +20,7 @@ export default function ManageRestaurant() {
                     resData?.length > 0 ?
                         resData?.map(e => (
                             <div key={e._id} className='p-4 rounded-lg bg-gray-200 w-full'>
-                                <p>{e.restaurantName}</p>
+                                <Link to={`/restaurant/${e._id}`}>{e.restaurantName}</Link>
                             </div>
                         ))
                         :

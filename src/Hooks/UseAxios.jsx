@@ -1,5 +1,5 @@
 import axios from "axios"
-import { use, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../Context/AuthContext";
 
 const instance = axios.create({
@@ -7,12 +7,13 @@ const instance = axios.create({
 });
 
 export const useAxios = () => {
-    const { user, loading } = use(UserContext)
+    const { user, loading } = useContext(UserContext)
 
     useEffect(() => {
         const reqInterceptor = instance.interceptors.request.use(config => {
-            if (loading) return null;
-            config.headers.Authorization = `Bearer ${user?.accessToken}`
+            if (!loading && user?.accessToken) {
+                config.headers.Authorization = `Bearer ${user.accessToken}`
+            }
             return config
         })
 
