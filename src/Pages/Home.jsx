@@ -9,7 +9,7 @@ import Stats from "../Components/Home/Stats";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Hero />
       <HowItWorks />
       <PopularDishes />
@@ -17,7 +17,7 @@ const Home = () => {
       <OwnerCTA />
       <Reviews/>
       <Stats/>
-    </div>
+    </main>
   );
 };
 

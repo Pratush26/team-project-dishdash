@@ -7,8 +7,8 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-20 bg-white ">
+      <div className="w-11/12 mx-auto ">
         <h2 className="text-3xl font-bold text-center mb-12">
           How It Works
         </h2>

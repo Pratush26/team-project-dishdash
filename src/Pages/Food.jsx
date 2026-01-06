@@ -37,7 +37,7 @@ export default function Food() {
                                 <div key={e._id} className="p-4 space-y-2 rounded-lg bg-white shadow h-full">
                                     <p className="text-lg font-semibold ">{e.title ?? e.name}</p>
                                     <img src={e.image} alt="menu image" className="w-full aspect-square rounded-md object-cover" />
-                                    <p className="text-lg font-medium text-(--primary-600)">৳ {e.price}</p>
+                                    <p className="text-lg font-medium text-(--primary-500)">৳ {e.price}</p>
                                     <div className="flex gap-1 items-center justify-between">
                                         <button onClick={() => toast.success(`${e.title ?? e.name} successfully added to cart`)} className="btn trns btn-primary rounded-md">Add to Cart</button>
                                         <Link to={`/foodDetails/${e._id}`} className="italic text-sm font-medium" >View Details</Link>

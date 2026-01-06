@@ -4,7 +4,7 @@
 
 :root {
   /* Primary Colors */
-  --primary-500: red;
+  --primary-500: #f54a00;
   --primary-600: darkred;
   --primary-700: crimson;
 }
@@ -45,7 +45,7 @@ aside>a.active{
   cursor: pointer;
 }
 .btn-primary{
-  background-color: var(--primary-600);
+  background-color: var(--primary-500);
   color: white;
   font-size: small;
   font-weight: 700;

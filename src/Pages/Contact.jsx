@@ -1,3 +1,5 @@
+import '../Utils/form.css'
+
 const Contact = () => {
   return (
     <section className="min-h-screen bg-white py-20">
@@ -14,7 +16,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-11/12 mx-auto place-content-center-safe">
 
           {/* Contact Info */}
           <div>
@@ -37,7 +39,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="bg-gray-50 p-8 rounded-xl shadow">
+          <form className="bg-gray-50 p-8 rounded-xl shadow w-full">
             <div className="mb-4">
               <label className="block mb-2 text-sm font-medium">
                 Name

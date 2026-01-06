@@ -30,7 +30,7 @@ const About = () => {
             Who Is This Platform For?
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-11/12 mx-auto">
             {/* Admin */}
             <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
               <h3 className="text-xl font-semibold mb-3 text-orange-500">
