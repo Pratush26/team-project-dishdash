@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useAxios } from '../../Hooks/UseAxios'
 import '../../Utils/table.css'
 import { Link } from 'react-router'
 import Loader from '../../Components/Shared/Loader'
+import { UserContext } from '../../Context/AuthContext'
 
 export default function ManageRestaurant() {
     const axis = useAxios()
+    const { user } = useContext(UserContext)
     const [resData, setResData] = useState([])
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
             try {
-                const res = await axis(`/restaurants`)
+                const res = await axis(`/restaurants/owner/${user?.email}`)
                 setResData(res.data)
             } catch (err) {
                 console.error(err)
@@ -21,7 +23,8 @@ export default function ManageRestaurant() {
             }
         }
         fetchData()
-    }, [axis])
+    }, [axis, user])
+    console.log(resData)
     return (
         <main className='w-11/12 mx-auto my-8'>
             <section className='flex flex-col items-center justify-center w-full gap-4'>

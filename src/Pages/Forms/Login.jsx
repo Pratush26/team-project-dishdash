@@ -37,7 +37,7 @@ export default function LoginPage() {
             const res = await googleSignIn()
             if (!res.user?.email) throw new Error("Google login failed")
 
-            await axios.post(`${import.meta.env.VITE_SERVER}/citizen`, { name: res.user.displayName, email: res.user.email, photo: res.user.photoURL });
+            await axios.post(`${import.meta.env.VITE_SERVER}/user`, { name: res.user.displayName, email: res.user.email, photo: res.user.photoURL });
             toast.success(`Welcome Back, ${res.user?.displayName}`)
 
         } catch (error) {
