@@ -4,12 +4,12 @@ import axios from "axios"
 import { useContext } from "react"
 import { AuthContext } from "../../Context/AuthContext"
 import { toast } from "react-toastify"
-// import { useAxios } from "../../Hooks/UseAxios"
+import { useAxios } from "../../Hooks/UseAxios"
 
 export default function OpenRestaurantForm() {
     const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm()
     const { user } = useContext(AuthContext)
-    // const axis = useAxios()
+    const axis = useAxios()
     const formSubmit = async (data) => {
         try {
             const formData = new FormData();
@@ -20,7 +20,7 @@ export default function OpenRestaurantForm() {
             data.owner = user?.email
             data.logo = ImgRes?.data.data?.display_url
 
-            const res = await axios.post('/restaurants', data)
+            const res = await axis.post('/restaurants', data)
             if(!res?.data.acknowledged) toast.error("Failed to registered");
             toast.success("Successfully registered");
             reset();

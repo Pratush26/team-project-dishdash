@@ -12,6 +12,7 @@ import Dashboard from "../Pages/Dashboard";
 import Restaurant from "../Pages/Restaurant";
 import LoadingPage from "../Layouts/Loading";
 import ErrorPage from "../Layouts/ErrorPage";
+import FoodDetail from "../Pages/FoodDetail";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
             {
                 path: "/restaurant/:id",
                 element: <Restaurant />
+            },
+            {
+                path: "/food-details/:id",
+                element: <FoodDetail />
             },
             {
                 path: "about",

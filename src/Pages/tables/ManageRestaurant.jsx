@@ -24,7 +24,6 @@ export default function ManageRestaurant() {
         }
         fetchData()
     }, [axis, user])
-    console.log(resData)
     return (
         <main className='w-11/12 mx-auto my-8'>
             <section className='flex flex-col items-center justify-center w-full gap-4'>
