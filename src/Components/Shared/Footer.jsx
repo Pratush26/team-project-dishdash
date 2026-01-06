@@ -31,7 +31,7 @@ export default function Footer() {
                                 <Link className='trns hover:text-gray-600' to='/login'>Login</Link>
                             </>
                     }
-                    <Link className='trns hover:text-gray-600' to='/all-issues'>All Issues</Link>
+                    <Link className='trns hover:text-gray-600' to='/foods'>Foods</Link>
                     <Link className='trns hover:text-gray-600' to='/terms'>Terms & Conditions</Link>
                 </div>
                 <div className='space-y-2 text-lg'>

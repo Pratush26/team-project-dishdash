@@ -3,11 +3,14 @@ import { useAxios } from "../Hooks/UseAxios"
 import { Link } from "react-router"
 import { toast } from "react-toastify"
 import Loader from "../Components/Shared/Loader"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../features/cartSlice"
 
 export default function Food() {
     const axis = useAxios()
     const [resData, setResData] = useState([])
     const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
@@ -22,10 +25,21 @@ export default function Food() {
         }
         fetchData()
     }, [axis])
+
+    const handleAddToCart = (d) => {
+        dispatch(
+            addToCart({
+                foodId: d._id,
+                foodName: d.title
+            })
+        );
+        toast.success(`${d.title} successfully added to cart`)
+    };
+    
     return (
         <main className="w-11/12 mx-auto my-8">
             <h1 className="text-center text-3xl font-semibold m-4">All Foods</h1>
-            <section className="grid grid-cols-4 items-center-safe justify-items-center-safe gap-4 min-h-[50vh]">
+            <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center-safe justify-items-center-safe gap-4 min-h-[50vh]">
                 {
                     loading ?
                         <div className="w-full col-span-4 flex items-center justify-center min-h-[50vh]">
@@ -39,7 +53,7 @@ export default function Food() {
                                     <img src={e.image} alt="menu image" className="w-full aspect-square rounded-md object-cover" />
                                     <p className="text-lg font-medium text-(--primary-500)">৳ {e.price}</p>
                                     <div className="flex gap-1 items-center justify-between">
-                                        <button onClick={() => toast.success(`${e.title ?? e.name} successfully added to cart`)} className="btn trns btn-primary rounded-md">Add to Cart</button>
+                                        <button onClick={() => handleAddToCart({ _id: e._id, title: e.title ?? e.name })} className="btn trns btn-primary rounded-md">Add to Cart</button>
                                         <Link to={`/foodDetails/${e._id}`} className="italic text-sm font-medium" >View Details</Link>
                                     </div>
                                 </div>

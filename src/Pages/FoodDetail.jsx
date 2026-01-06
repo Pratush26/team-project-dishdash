@@ -3,12 +3,16 @@ import { useAxios } from "../Hooks/UseAxios"
 import { useParams } from "react-router"
 import Loader from "../Components/Shared/Loader"
 import { toast } from "react-toastify"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../features/cartSlice"
 
 export default function FoodDetail() {
     const { id } = useParams()
     const axis = useAxios()
     const [resData, setResData] = useState({})
     const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
+
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true)
@@ -30,7 +34,17 @@ export default function FoodDetail() {
             </div>
         )
     }
-    console.log(resData)
+    
+    const handleAddToCart = (d) => {
+            dispatch(
+                addToCart({
+                    foodId: d._id,
+                    foodName: d.title
+                })
+            );
+            toast.success(`${d.title} successfully added to cart`)
+        };
+
     return (
         <main className="w-11/12 mx-auto my-6">
            <div className="w-full bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
@@ -72,7 +86,7 @@ export default function FoodDetail() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <button
-              onClick={() => toast.success(`${resData?.title ?? resData.name} successfully added to cart`)}
+               onClick={() => handleAddToCart({ _id: resData?._id, title: resData?.title ?? resData?.name })} 
               className="btn btn-out text-(--primary-500) trns rounded-md"
             >
               Add to Cart
